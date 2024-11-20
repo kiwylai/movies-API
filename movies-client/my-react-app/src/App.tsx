@@ -1,6 +1,8 @@
 import "./App.css";
 import apiClient from "./api/axiosConfig";
 import { useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import Layout from "./component/Layout";
 
 interface Movie {
   id: number;
@@ -14,8 +16,6 @@ function App() {
     try {
       const response = await apiClient.get("api/v1/movies");
 
-      console.log(response.data);
-
       setMovies(response.data);
     } catch (err) {
       console.log(err);
@@ -26,7 +26,13 @@ function App() {
     getMovies();
   }, []);
 
-  return <></>;
+  return (
+    <>
+      <Routes>
+        <Route path="/" element={Layout}></Route>
+      </Routes>
+    </>
+  );
 }
 
 export default App;
