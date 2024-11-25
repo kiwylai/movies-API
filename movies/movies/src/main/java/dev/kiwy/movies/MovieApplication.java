@@ -19,7 +19,7 @@ public class MovieApplication {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/api/v1/**")
-						.allowedOrigins("http://localhost:5173") // 允许的来源
+						.allowedOrigins("${frontend.url}") // 允许的来源
 						.allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // 允许的 HTTP 方法
 						.allowedHeaders("*") // 允许的头部
 						.allowCredentials(true) // 是否允许发送凭证
