@@ -17,7 +17,7 @@ public class MovieController {
     @Autowired
     private MovieService service;
 
-    @CrossOrigin(origins = {"${frontend.url}"})
+    @CrossOrigin(origins = {"http://localhost:5173" , "https://e215-94-139-31-105.ngrok-free.app"})
 
     @GetMapping("/movies")
     public ResponseEntity<List<Movie>> getMovies() {

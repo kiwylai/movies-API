@@ -19,11 +19,12 @@ public class MovieApplication {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/api/v1/**")
-						.allowedOrigins("${frontend.url}") // 允许的来源
-						.allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // 允许的 HTTP 方法
-						.allowedHeaders("*") // 允许的头部
-						.allowCredentials(true) // 是否允许发送凭证
-						.maxAge(3600); // 预检请求的缓存时间
+						.allowedOrigins("http://localhost:5173")
+						.allowedOriginPatterns("https://e215-94-139-31-105.ngrok-free.app")
+						.allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+						.allowedHeaders("*")
+						.allowCredentials(true)
+						.maxAge(3600);
 			}
 		};
 	}
