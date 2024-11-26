@@ -20,7 +20,7 @@ public class MovieApplication {
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/api/v1/**")
 						.allowedOrigins("http://localhost:5173")
-						.allowedOriginPatterns("https://e215-94-139-31-105.ngrok-free.app")
+						.allowedOriginPatterns(" https://9096-94-139-31-105.ngrok-free.app")
 						.allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
 						.allowedHeaders("*")
 						.allowCredentials(true)
