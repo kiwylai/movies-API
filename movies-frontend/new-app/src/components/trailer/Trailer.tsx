@@ -3,13 +3,14 @@ import ReactPlayer from "react-player";
 import "./Trailer.css";
 import React from "react";
 
-interface TrailerParams {
-  ytTrailerId?: string;
-}
+// interface TrailerParams {
+//   ytTrailerId?: string;
+// }
 
 const Trailer: React.FC = () => {
-  const params = useParams<TrailerParams>();
+  const params = useParams<Record<string, string | undefined>>();
   const key = params.ytTrailerId;
+  console.log("useParams output:", params);
 
   return (
     <div className="react-player-container">
@@ -21,7 +22,9 @@ const Trailer: React.FC = () => {
           width="100%"
           height="100%"
         />
-      ) : null}
+      ) : (
+        <div>Invalid trailer link or trailer ID not found.</div>
+      )}
     </div>
   );
 };
